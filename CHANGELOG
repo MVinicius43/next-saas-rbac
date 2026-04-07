@@ -4,3 +4,5 @@
 - feat: add seeded database
 - feat: add swagger setup
 - feat: add automatic association via email and login via password routes
+- feat: add error handler and authentication middleware
+- feat: add authenticate with github, recover password, reset password and create organizations routes

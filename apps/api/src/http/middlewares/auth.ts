@@ -14,5 +14,7 @@ export const auth = fastifyPlugin(async (app: FastifyInstance) => {
         throw new UnauthorizedError('Invalid auth token.')
       }
     }
+
+    request.getUserMembership = async (slug: string) => {}
   })
 })
