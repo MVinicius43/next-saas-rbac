@@ -1,2 +1,11 @@
 1.0.0 - 01/04/2026
 - feat: add auth package including all permissions
+- feat: add prisma configuration and create-account request
+- feat: add seeded database
+- feat: add swagger setup
+- feat: add automatic association via email and login via password routes
+- feat: add error handler and authentication middleware
+- feat: add authenticate with github, recover password, reset password and create organizations routes
+- feat: add get membership, get organizations, shutdown organization routes
+- feat: add members and projects routes
+- feat: add billing and invites routes
