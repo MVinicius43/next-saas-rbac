@@ -1,5 +1,6 @@
 1.0.1 - 09/04/2026
 - feat: add web app structure
+- feat: add auth pages
 
 1.0.0 - 01/04/2026
 - feat: add auth package including all permissions
