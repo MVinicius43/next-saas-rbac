@@ -18,6 +18,31 @@ type FormState =
                     errors: string[]
                   }
                 | undefined
+              password_confirmation?:
+                | {
+                    errors: string[]
+                  }
+                | undefined
+              name?:
+                | {
+                    errors: string[]
+                  }
+                | undefined
+              domain?:
+                | {
+                    errors: string[]
+                  }
+                | undefined
+              shouldAttachUsersByDomain?:
+                | {
+                    errors: string[]
+                  }
+                | undefined
+              description?:
+                | {
+                    errors: string[]
+                  }
+                | undefined
             }
           | undefined
       }
@@ -30,6 +55,7 @@ type FormState =
 
 export function useFormState(
   action: (data: FormData) => Promise<FormState>,
+  onSuccess?: () => Promise<void> | void,
   initialState?: FormState,
 ) {
   const [isPending, startTransition] = useTransition()
@@ -50,6 +76,10 @@ export function useFormState(
 
     startTransition(async () => {
       const state = await action(data)
+
+      if (state.success && onSuccess) {
+        await onSuccess()
+      }
 
       setFormState(state)
     })
